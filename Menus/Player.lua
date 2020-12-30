@@ -23,6 +23,11 @@ local kickOptions = lpg:CreateSection('Kicker Options')
 local kickALL = kickOptions:CreateButton('Kick All Players', function() kicker() end)
 local rage = kickOptions:CreateSwitch('Rage Mode', function(bool) rageMode = bool end)
 local rage_slider = kickOptions:CreateSlider("Rage Mode Wait", function(value) noOptions = false customWait = value end,0,10,0.1,false,1)
+local rage_selector = kickOptions:CreateSelector('Player: ', function() return; end, function() return game.Players:GetPlayers() end)
+local targetplayer = kickOptions:CreateButton('Kick Player', function() spawn(targetPlayer) end)
+local specialOptions = lpg:CreateSection('Special Options')
+local guardGod = specialOptions:CreateButton('Guard Godmode', function() spawn(gGod) end)
+local relic = specialOptions:CreateButton('Give Relic', function() game:GetService("ReplicatedStorage").Remotes.Relic:InvokeServer() end)
 local Exit = lpg:CreateButton("Exit",function() gui:CleanUp() end)
 --- Kicker Section ---
 
@@ -50,6 +55,34 @@ function rageStart()
             end
         end
     end
+
+function targetPlayer()
+    if rage_selector:GetValue() ~= thisPlayer and rage_selector:GetValue() ~= nil then
+        remote:FireServer({
+            ["OtherCharacter"] = rage_selector:GetValue().Character,
+            ["LV"] = Vector3.new(math.random(5000), math.random(5000), math.random(5000))
+            })
+    end
+    end
+
+function gGod()
+    local gmt = getrawmetatable(game)
+    local old = gmt.__namecall
+    
+    setreadonly(gmt, false)
+    
+    gmt.__namecall = newcclosure(function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" and self.Name == "DealDamage" then
+        print('Nothing can Stop us now!')
+        return nil
+    end
+    return old(self, ...)
+end)
+
+setreadonly(gmt, true)
+end
 
 while wait() do
     if rageMode == true and noOptions == true then
