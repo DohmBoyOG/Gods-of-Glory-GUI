@@ -12,10 +12,25 @@ local lpg = gui:CreateCategory("Gods Of Glory GUI ")
 
 --- Main Menu ---
 local Mana = lpg:CreateButton('Mana Options', function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/DohmBoyOG/Gods-of-Glory-GUI/main/Menus/Mana.lua'),true))() end)
-local Codes = lpg:CreateButton('Twitter Codes')
+local Codes = lpg:CreateButton('Twitter Codes', function() twitterCodes() end)
 local Player = lpg:CreateButton('Player Fun')
 local World = lpg:CreateButton('World Fun')
 local Teleport = lpg:CreateButton('Teleports')
 local Exit = lpg:CreateButton("Exit",function() gui:CleanUp() end)
 local Credits = lpg:CreateTextLabel('Made By DohmBoyOG')
 --- Main Menu ---
+
+--- Functions Setup --
+
+function twitterCodes()
+    codes = require(game:GetService("ReplicatedStorage").Sandbox.Codes).YoutuberCodes
+    print('----------- Begin Twitter Codes -----------')
+    for code, youtuber in pairs(codes) do
+    --game:GetService("ReplicatedStorage").Remotes.CodeItem:InvokeServer({
+       -- ["Value"] = code
+    --})
+    --wait(20)
+    print('[Code]: '..code..' [Youtuber:] '..youtuber)
+   end
+   print('------------- End Twitter Codes -------------')
+end
