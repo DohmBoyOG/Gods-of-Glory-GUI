@@ -34,7 +34,7 @@ function kicker()
             remote:FireServer({
                 ["OtherCharacter"] = v.Character,
                 ["LV"] = Vector3.new(math.random(5000), math.random(5000), math.random(5000))})
-                print('kicking '..v.name)
+                --print('kicking '..v.name)
             end
         end
     end
