@@ -15,7 +15,7 @@ local Mana = lpg:CreateButton('Mana Options', function() loadstring(game:HttpGet
 local Codes = lpg:CreateButton('Twitter Codes', function() twitterCodes() end)
 local Player = lpg:CreateButton('Player Fun', function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/DohmBoyOG/Gods-of-Glory-GUI/main/Menus/Player.lua'),true))() end)
 local World = lpg:CreateButton('World Fun', function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/DohmBoyOG/Gods-of-Glory-GUI/main/Menus/World.lua'),true))() end) 
-local Teleport = lpg:CreateButton('Teleports')
+local Teleport = lpg:CreateButton('Teleports', function() print('SOOOOOOOOOON') end)
 local Exit = lpg:CreateButton("Exit",function() gui:CleanUp() end)
 local Credits = lpg:CreateTextLabel('Made By DohmBoyOG')
 --- Main Menu ---
