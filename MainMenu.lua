@@ -11,7 +11,7 @@ local lpg = gui:CreateCategory("Gods Of Glory GUI ")
 --- GUI Setup ---
 
 --- Main Menu ---
-local Mana = lpg:CreateButton('Mana Options')
+local Mana = lpg:CreateButton('Mana Options', function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/DohmBoyOG/Gods-of-Glory-GUI/main/Menus/Mana.lua'),true))() end)
 local Codes = lpg:CreateButton('Twitter Codes')
 local Player = lpg:CreateButton('Player Fun')
 local World = lpg:CreateButton('World Fun')
