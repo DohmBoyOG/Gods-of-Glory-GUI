@@ -10,7 +10,7 @@ local config = {
 
 --- GUI Setup ---
 local gui = loadstring(game:HttpGet("https://gitlab.com/0x45.xyz/droplib/-/raw/master/drop-minified.lua"))():Init(config,game.CoreGui)
-local lpg = gui:CreateCategory("World Fun Options ")
+local lpg = gui:CreateCategory("World Fun Options ", UDim2.new(0, 400, 0, 100))
 --- GUI Setup ---
 
 local sDestruct = lpg:CreateButton('Self Destruct Worlds',function() spawn(function()
