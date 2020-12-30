@@ -54,11 +54,9 @@ function rageStart()
 while wait() do
     if rageMode == true and noOptions == true then
         spawn(rageStart)
-        print('nowait')
     elseif rageMode == true and customWait > 0 then
         wait(customWait)
         spawn(rageStart)
-        print('waittt')
     else
         noOptions = true
     end

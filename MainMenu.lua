@@ -13,7 +13,7 @@ local lpg = gui:CreateCategory("Gods Of Glory GUI ")
 --- Main Menu ---
 local Mana = lpg:CreateButton('Mana Options', function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/DohmBoyOG/Gods-of-Glory-GUI/main/Menus/Mana.lua'),true))() end)
 local Codes = lpg:CreateButton('Twitter Codes', function() twitterCodes() end)
-local Player = lpg:CreateButton('Player Fun')
+local Player = lpg:CreateButton('Player Fun', function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/DohmBoyOG/Gods-of-Glory-GUI/main/Menus/Player.lua'),true))() end)
 local World = lpg:CreateButton('World Fun')
 local Teleport = lpg:CreateButton('Teleports')
 local Exit = lpg:CreateButton("Exit",function() gui:CleanUp() end)
