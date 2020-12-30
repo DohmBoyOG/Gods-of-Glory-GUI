@@ -15,15 +15,16 @@ local config = {
 
 --- GUI Setup ---
 local gui = loadstring(game:HttpGet("https://gitlab.com/0x45.xyz/droplib/-/raw/master/drop-minified.lua"))():Init(config,game.CoreGui)
-local lpg = gui:CreateCategory("Player Options ")
+local lpg = gui:CreateCategory("Player Options ",  UDim2.new(0, 400, 0, 100))
 --- GUI Setup ---
 
---- Button Setup --
+--- Kicker Section ---
 local kickOptions = lpg:CreateSection('Kicker Options')
 local kickALL = kickOptions:CreateButton('Kick All Players', function() kicker() end)
 local rage = kickOptions:CreateSwitch('Rage Mode', function(bool) rageMode = bool end)
 local rage_slider = kickOptions:CreateSlider("Rage Mode Wait", function(value) noOptions = false customWait = value end,0,10,0.1,false,1)
-
+local Exit = lpg:CreateButton("Exit",function() gui:CleanUp() end)
+--- Kicker Section ---
 
 --- Functions Setup ---
 
