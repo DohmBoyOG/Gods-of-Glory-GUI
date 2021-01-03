@@ -28,7 +28,7 @@ mOptions:Collapse()
 function autoMana()
     local remote = game:GetService("ReplicatedStorage").Remotes.GiveMana
     remote:FireServer({
-        ["Value"] = 50000
+        ["Value"] = 500000000
     })
 end
 
